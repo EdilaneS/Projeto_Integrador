@@ -21,10 +21,9 @@ CREATE TABLE `usuario` (
 	`email` varchar(70) NOT NULL,
 	`senha` varchar(70) NOT NULL,
 	`pontuacao` INT NOT NULL,
-	`curso_estudado` TEXT NOT NULL,
-	`curso_monitorado` TEXT NOT NULL,
-	`fk_id_tipo_usuario` TEXT NOT NULL,
-	`curso_criado` TEXT NOT NULL,
+	`curso_estudado` INT NOT NULL,
+	`curso_monitorado` INT NOT NULL,
+	`curso_criado` INY NOT NULL,
 	PRIMARY KEY (`id_usuario`)
 );
 
@@ -34,7 +33,6 @@ ALTER TABLE `usuario` ADD CONSTRAINT `usuario_fk0` FOREIGN KEY (`curso_estudado`
 
 ALTER TABLE `usuario` ADD CONSTRAINT `usuario_fk1` FOREIGN KEY (`curso_monitorado`) REFERENCES `produto`(`id_produto`);
 
-ALTER TABLE `usuario` ADD CONSTRAINT `usuario_fk2` FOREIGN KEY (`fk_id_tipo_usuario`) REFERENCES `tipo_usuario`(`id_tipo_usuario`);
 
 ALTER TABLE `usuario` ADD CONSTRAINT `usuario_fk3` FOREIGN KEY (`curso_criado`) REFERENCES `produto`(`id_produto`);
 
